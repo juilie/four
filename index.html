@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -56,6 +57,13 @@
     </div>
   </div>
 <script>
+
+$('.mydiv').mousedown(function() {
+// set ohters element to the initial level
+$(this).siblings('.mydiv').css('z-index', 10);
+// set clicked element to a higher level
+$(this).css('z-index', 11);
+});
     // Make the DIV element draggable:
     const divs = document.getElementsByClassName("mydiv");
     for (let index = 0; index < divs.length; index++) {
