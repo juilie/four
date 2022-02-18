@@ -1,0 +1,49 @@
+body {
+    background-color: pink;
+    background-image: url("./Images/flowerz.png");
+    /* background-size: cover; */
+    font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+.mydiv {
+    position: absolute;
+    z-index: 9;
+    background-color: #f1f1f1;
+    text-align: center;
+    border: 1px solid #d3d3d3;
+    width: 400px;
+    height: 350px;
+  }
+
+  .mydivheader {
+    background-image: url("./Images/hearttile.gif");
+
+    justify-content: center;
+    align-items: center;
+    border: 10px ridge pink;
+    height: 100%;
+    background-color: pink;
+    padding: 10px;
+    cursor: move;
+    z-index: 10;
+    background-color: #2196F3;
+    color: #fff;
+    overflow: scroll;
+  }
+
+  .title {
+      background-image: url("Images/heartprint.jpeg");
+      background-color: pink;
+      padding: 20px;
+      margin-top: -10px;
+  }
+
+  img {
+      width: 100%;
+      height: auto;
+  }
+
+  h1 {
+      background-color: rgba(255, 144, 222, 0.808);
+      padding: 10px;
+  }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div class="title"><h1 style="text-align:center">Happy 4pth Grownanitverbsereen</h1></div>
+
+<div style="top: 165px; left: 606px;" class="mydiv">
+  <div class="mydivheader">
+      <div class="text">
+          <h2>Family of Four</h2>
+          <div><img src="Images/family.jpeg" /></div>
+      </div>
+  </div>
+</div>
+
+<div style="top: 423px; left: 478px;" class="mydiv">
+    <div class="mydivheader">
+        <div class="text">
+            <h2>Four pets</h2>
+            <img src="Images/am.jpg" />
+            <img src="Images/snails.jpeg" />
+            <img src="Images/charles.jpg" />
+        </div>
+    </div>
+</div>
+
+<div style="top: 303px; left: 693px;" class="mydiv">
+    <div class="mydivheader">
+        <div class="text">
+            <h2>Four person ensemble</h2>
+            <img src="Images/ensemble.jpeg" />
+        </div>
+    </div>
+</div>
+
+<div style="top: 175px; left: 364px;" class="mydiv">
+    <div class="mydivheader">
+        <div class="text">
+            <h2>Remember leaf game?</h2>
+            <img src="Images/leafgame.jpeg" />
+        </div>
+    </div>
+</div>
+
+<div style="top: 243px; left: 883px;" class="mydiv">
+    <div class="mydivheader">
+        <div class="text">
+            <h2>Four homes</h2>
+            <img src="Images/oldb.jpeg" />
+            <img src="Images/am.jpeg" />
+            <img src="Images/guilford.jpeg" />
+            <img src="Images/middletown.jpeg" />
+        </div>
+    </div>
+  </div>
+<script>
+    // Make the DIV element draggable:
+    const divs = document.getElementsByClassName("mydiv");
+    for (let index = 0; index < divs.length; index++) {
+        dragElement(divs[index]);
+    }
+    
+    function dragElement(elmnt) {
+      var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+      if (document.getElementById(elmnt.id + "header")) {
+        /* if present, the header is where you move the DIV from:*/
+        document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      } else {
+        /* otherwise, move the DIV from anywhere inside the DIV:*/
+        elmnt.onmousedown = dragMouseDown;
+      }
+    
+      function dragMouseDown(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // get the mouse cursor position at startup:
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        document.onmouseup = closeDragElement;
+        // call a function whenever the cursor moves:
+        document.onmousemove = elementDrag;
+      }
+    
+      function elementDrag(e) {
+        e = e || window.event;
+        e.preventDefault();
+        // calculate the new cursor position:
+        pos1 = pos3 - e.clientX;
+        pos2 = pos4 - e.clientY;
+        pos3 = e.clientX;
+        pos4 = e.clientY;
+        // set the element's new position:
+        elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+        elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+      }
+    
+      function closeDragElement() {
+        /* stop moving when mouse button is released:*/
+        document.onmouseup = null;
+        document.onmousemove = null;
+      }
+    }
+    </script>
+</body>
+</html>
